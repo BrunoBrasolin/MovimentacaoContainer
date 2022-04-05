@@ -46,7 +46,7 @@ namespace MovimentacaoContainer.Migrations
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
-                    b.Property<int>("Type")
+                    b.Property<int>("Tipo")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -65,13 +65,13 @@ namespace MovimentacaoContainer.Migrations
                     b.Property<int>("ContainerId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("EndDate")
+                    b.Property<DateTime>("DataHoraFim")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("StartDate")
+                    b.Property<DateTime>("DataHoraInicio")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Type")
+                    b.Property<int>("Tipo")
                         .HasColumnType("int");
 
                     b.HasKey("Id");

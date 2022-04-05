@@ -17,7 +17,7 @@ namespace MovimentacaoContainer.Models
         public string Cliente { get; set; }
 
         [Required]
-        public TipoContainer Type { get; set; }
+        public TipoContainer Tipo { get; set; }
 
         [Required]
         public StatusContainer Status { get; set; }

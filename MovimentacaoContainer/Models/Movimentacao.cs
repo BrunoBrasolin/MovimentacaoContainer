@@ -8,15 +8,15 @@ namespace MovimentacaoContainer.Models
         public int Id { get; set; }
 
         [Required]
-        public TipoMovimentacao Type { get; set; }
+        public TipoMovimentacao Tipo { get; set; }
 
         [Required]
         [DataType(DataType.Date)]
-        public DateTime StartDate { get; set; }
+        public DateTime DataHoraInicio { get; set; }
 
         [Required]
         [DataType(DataType.Date)]
-        public DateTime EndDate { get; set; }
+        public DateTime DataHoraFim { get; set; }
 
         [Required]
         public Container Container { get; set; }

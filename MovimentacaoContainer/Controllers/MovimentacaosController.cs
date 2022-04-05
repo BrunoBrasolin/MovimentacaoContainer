@@ -11,22 +11,22 @@ using MovimentacaoContainer.Models;
 
 namespace MovimentacaoContainer.Controllers
 {
-    public class MovimentacoesController : Controller
+    public class MovimentacaosController : Controller
     {
         private readonly MovimentacaoContainerContext _context;
 
-        public MovimentacoesController(MovimentacaoContainerContext context)
+        public MovimentacaosController(MovimentacaoContainerContext context)
         {
             _context = context;
         }
 
-        // GET: Movimentacoes
+        // GET: Movimentacaos
         public async Task<IActionResult> Index()
         {
             return View(await _context.Movimentacao.ToListAsync());
         }
 
-        // GET: Movimentacoes/Details/5
+        // GET: Movimentacaos/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -44,18 +44,18 @@ namespace MovimentacaoContainer.Controllers
             return View(movimentacao);
         }
 
-        // GET: Movimentacoes/Create
+        // GET: Movimentacaos/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Movimentacoes/Create
+        // POST: Movimentacaos/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Type,StartDate,EndDate")] Movimentacao movimentacao)
+        public async Task<IActionResult> Create([Bind("Id,Tipo,DataHoraInicio,DataHoraFim")] Movimentacao movimentacao)
         {
             if (ModelState.IsValid)
             {
@@ -66,7 +66,7 @@ namespace MovimentacaoContainer.Controllers
             return View(movimentacao);
         }
 
-        // GET: Movimentacoes/Edit/5
+        // GET: Movimentacaos/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -82,12 +82,12 @@ namespace MovimentacaoContainer.Controllers
             return View(movimentacao);
         }
 
-        // POST: Movimentacoes/Edit/5
+        // POST: Movimentacaos/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Type,StartDate,EndDate")] Movimentacao movimentacao)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Tipo,DataHoraInicio,DataHoraFim")] Movimentacao movimentacao)
         {
             if (id != movimentacao.Id)
             {
@@ -117,7 +117,7 @@ namespace MovimentacaoContainer.Controllers
             return View(movimentacao);
         }
 
-        // GET: Movimentacoes/Delete/5
+        // GET: Movimentacaos/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -135,7 +135,7 @@ namespace MovimentacaoContainer.Controllers
             return View(movimentacao);
         }
 
-        // POST: Movimentacoes/Delete/5
+        // POST: Movimentacaos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

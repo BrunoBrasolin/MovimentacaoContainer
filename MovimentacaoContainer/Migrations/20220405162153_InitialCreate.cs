@@ -17,7 +17,7 @@ namespace MovimentacaoContainer.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Numero = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: false),
                     Cliente = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    Type = table.Column<int>(type: "int", nullable: false),
+                    Tipo = table.Column<int>(type: "int", nullable: false),
                     Status = table.Column<int>(type: "int", nullable: false),
                     Categoria = table.Column<int>(type: "int", nullable: false)
                 },
@@ -32,9 +32,9 @@ namespace MovimentacaoContainer.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Type = table.Column<int>(type: "int", nullable: false),
-                    StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    EndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Tipo = table.Column<int>(type: "int", nullable: false),
+                    DataHoraInicio = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DataHoraFim = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ContainerId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
