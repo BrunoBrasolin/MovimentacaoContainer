@@ -84,17 +84,12 @@ namespace MovimentacaoContainer.Migrations
             modelBuilder.Entity("MovimentacaoContainer.Models.Movimentacao", b =>
                 {
                     b.HasOne("MovimentacaoContainer.Models.Container", "Container")
-                        .WithMany("Movimentacoes")
+                        .WithMany()
                         .HasForeignKey("ContainerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Container");
-                });
-
-            modelBuilder.Entity("MovimentacaoContainer.Models.Container", b =>
-                {
-                    b.Navigation("Movimentacoes");
                 });
 #pragma warning restore 612, 618
         }

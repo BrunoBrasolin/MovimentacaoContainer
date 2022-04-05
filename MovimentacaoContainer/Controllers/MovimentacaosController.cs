@@ -47,6 +47,7 @@ namespace MovimentacaoContainer.Controllers
         // GET: Movimentacaos/Create
         public IActionResult Create()
         {
+            ViewBag.Containers = _context.Container.Select(c => new SelectListItem() { Text = c.Numero, Value = c.Id.ToString() }).ToList();
             return View();
         }
 
@@ -57,6 +58,10 @@ namespace MovimentacaoContainer.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Tipo,DataHoraInicio,DataHoraFim")] Movimentacao movimentacao)
         {
+            int containerId = Convert.ToInt32(Request.Form["Container"]);
+            movimentacao.Container = _context.Container.Single(c => c.Id == containerId);
+            ModelState.Clear();
+
             if (ModelState.IsValid)
             {
                 _context.Add(movimentacao);

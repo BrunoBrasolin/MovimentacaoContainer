@@ -24,7 +24,5 @@ namespace MovimentacaoContainer.Models
 
         [Required]
         public CategoriaContainer Categoria { get; set; }
-
-        public ICollection<Movimentacao> Movimentacoes { get; set; }
     }
 }

@@ -12,7 +12,7 @@ using MovimentacaoContainer.Data;
 namespace MovimentacaoContainer.Migrations
 {
     [DbContext(typeof(MovimentacaoContainerContext))]
-    [Migration("20220405162153_InitialCreate")]
+    [Migration("20220405181218_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -86,17 +86,12 @@ namespace MovimentacaoContainer.Migrations
             modelBuilder.Entity("MovimentacaoContainer.Models.Movimentacao", b =>
                 {
                     b.HasOne("MovimentacaoContainer.Models.Container", "Container")
-                        .WithMany("Movimentacoes")
+                        .WithMany()
                         .HasForeignKey("ContainerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Container");
-                });
-
-            modelBuilder.Entity("MovimentacaoContainer.Models.Container", b =>
-                {
-                    b.Navigation("Movimentacoes");
                 });
 #pragma warning restore 612, 618
         }
